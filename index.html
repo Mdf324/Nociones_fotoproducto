@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Fotografía de Producto Profesional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos generales */
+        :root {
+            --primary: #E44D26;
+            --secondary: #F16529;
+            --accent: #FFD700;
+            --light: #FFF5F2;
+            --dark: #2C3E50;
+            --success: #27AE60;
+            --info: #3498DB;
+            --text: #2C3E50;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --gradient-primary: linear-gradient(135deg, #E44D26 0%, #F16529 100%);
+            --gradient-secondary: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            --gradient-bg: linear-gradient(135deg, #FFF5F2 0%, #FFE8E0 100%);
+            --gradient-card: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,245,242,0.95) 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: var(--gradient-bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Encabezado */
+        header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .logo {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            position: relative;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            position: relative;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+        
+        /* Navegación */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 15px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            background: rgba(228, 77, 38, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        nav a:hover {
+            background: var(--gradient-primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(228, 77, 38, 0.3);
+        }
+        
+        /* Secciones */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 120px;
+            height: 5px;
+            background: var(--gradient-secondary);
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            color: var(--text);
+            font-weight: 700;
+            position: relative;
+        }
+        
+        .section-title p {
+            font-size: 1.3rem;
+            color: var(--dark);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        
+        /* Tarjetas de contenido */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .card {
+            background: var(--gradient-card);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .card-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .card-header i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .card-body {
+            padding: 2.5rem 2rem;
+        }
+        
+        .card h3 {
+            font-size: 1.7rem;
+            margin-bottom: 1rem;
+            color: white;
+            font-weight: 600;
+        }
+        
+        /* Listas */
+        ul.feature-list {
+            list-style: none;
+        }
+        
+        ul.feature-list li {
+            margin-bottom: 1.2rem;
+            padding-left: 40px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        ul.feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.3rem;
+            background: rgba(39, 174, 96, 0.1);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--success);
+        }
+        
+        /* Ejemplos visuales */
+        .example-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .example-box {
+            background: var(--gradient-card);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .example-image {
+            width: 100%;
+            height: 200px;
+            background: var(--gradient-bg);
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary);
+        }
+        
+        /* Regla de tercios visual */
+        .rule-of-thirds {
+            width: 100%;
+            height: 300px;
+            background: var(--gradient-bg);
+            border-radius: 15px;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        
+        .grid-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+        
+        .grid-line {
+            border-right: 2px dashed rgba(228, 77, 38, 0.3);
+            border-bottom: 2px dashed rgba(228, 77, 38, 0.3);
+        }
+        
+        .grid-line:last-child {
+            border-right: none;
+        }
+        
+        .grid-line:nth-child(3n) {
+            border-bottom: none;
+        }
+        
+        .focus-point {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .point-1 { top: 33.3%; left: 33.3%; }
+        .point-2 { top: 33.3%; left: 66.6%; }
+        .point-3 { top: 66.6%; left: 33.3%; }
+        .point-4 { top: 66.6%; left: 66.6%; }
+        
+        /* Consejos */
+        .tip-box {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%);
+            border-left: 5px solid transparent;
+            border-image: var(--gradient-secondary) 1;
+            padding: 2rem;
+            border-radius: 0 15px 15px 0;
+            margin: 2.5rem 0;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .tip-box::before {
+            content: "💡";
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            z-index: 1;
+        }
+        
+        .tip-box::after {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient-secondary);
+            z-index: 0;
+        }
+        
+        /* Tablas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        th, td {
+            padding: 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        th {
+            background: var(--gradient-primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr:hover {
+            background: rgba(228, 77, 38, 0.03);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 5rem;
+            position: relative;
+        }
+        
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        /* Botones */
+        .btn {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(228, 77, 38, 0.4);
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(228, 77, 38, 0.5);
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 8px 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            nav a {
+                justify-content: center;
+            }
+            
+            .card-container, .example-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title::after {
+                width: 100px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo"><i class="fas fa-camera"></i></div>
+            <h1>Manual de Fotografía de Producto</h1>
+            <p class="subtitle">Aprende a tomar fotos profesionales que vendan tus productos</p>
+            <a href="#introduccion" class="btn" style="margin-top: 1.5rem;">
+                <i class="fas fa-graduation-cap"></i> Comenzar a aprender
+            </a>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#introduccion"><i class="fas fa-home"></i> Introducción</a></li>
+                <li><a href="#equipo"><i class="fas fa-tools"></i> Equipo Básico</a></li>
+                <li><a href="#iluminacion"><i class="fas fa-lightbulb"></i> Iluminación</a></li>
+                <li><a href="#composicion"><i class="fas fa-th"></i> Composición</a></li>
+                <li><a href="#enfoque"><i class="fas fa-crosshairs"></i> Enfoque</a></li>
+                <li><a href="#practica"><i class="fas fa-laptop"></i> Práctica</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="container">
+        <section id="introduccion">
+            <div class="section-title">
+                <h2>Introducción a la Fotografía de Producto</h2>
+                <p>Domina los fundamentos para crear imágenes que destaquen tus productos</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-body">
+                    <h3 style="color: var(--text); margin-bottom: 1.5rem;">¿Por qué es importante la fotografía de producto?</h3>
+                    <p>En el comercio online, las fotos de producto son el equivalente a un vendedor en una tienda física. Una buena fotografía puede:</p>
+                    
+                    <ul class="feature-list">
+                        <li>Aumentar la confianza del cliente en tu marca</li>
+                        <li>Mostrar los detalles y calidad de tus productos</li>
+                        <li>Diferenciarte de la competencia</li>
+                        <li>Incrementar las tasas de conversión</li>
+                        <li>Reducir devoluciones al mostrar el producto realista</li>
+                    </ul>
+                    
+                    <div class="tip-box">
+                        <strong>Dato importante:</strong> El 75% de los comprados online dicen que se basan en las fotos del producto para tomar su decisión de compra.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="example-container">
+                <div class="example-box">
+                    <div class="example-image">
+                        <i class="fas fa-times-circle" style="color: #E74C3C;"></i>
+                    </div>
+                    <h4>Mala Fotografía</h4>
+                    <p>Iluminación pobre, fondo desordenado, producto mal enfocado</p>
+                </div>
+                
+                <div class="example-box">
+                    <div class="example-image">
+                        <i class="fas fa-check-circle" style="color: #27AE60;"></i>
+                    </div>
+                    <h4>Buena Fotografía</h4>
+                    <p>Luz adecuada, composición equilibrada, producto nítido</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="equipo">
+            <div class="section-title">
+                <h2>Equipo Básico Necesario</h2>
+                <p>No necesitas equipo profesional caro para empezar</p>
+            </div>
+            
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Cámara</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Puedes empezar con lo que tienes:</p>
+                        
+                        <ul class="feature-list">
+                            <li><strong>Smartphone moderno:</strong> La mayoría tienen cámaras excelentes</li>
+                            <li><strong>Cámara réflex:</strong> Mayor control y calidad</li>
+                            <li><strong>Cámara sin espejo:</strong> Calidad profesional en cuerpo compacto</li>
+                            <li><strong>Tablet:</strong> Buena opción para productos grandes</li>
+                        </ul>
+                        
+                        <div class="tip-box" style="margin: 1.5rem 0;">
+                            <strong>Consejo:</strong> Limpia siempre el lente antes de fotografiar. ¡Es el error más común!
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Iluminación</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Elementos básicos de iluminación:</p>
+                        
+                        <ul class="feature-list">
+                            <li><strong>Luz natural:</strong> Ventana grande con luz indirecta</li>
+                            <li><strong>Difusores:</strong> Papel de seda, tela blanca o difusor profesional</li>
+                            <li><strong>Reflectores:</strong> Cartulina blanca, papel aluminio o reflector plegable</li>
+                            <li><strong>Trípode:</strong> Esencial para evitar fotos movidas</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-border-style"></i>
+                        <h3>Fondo y Escenario</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Crea un set de fotografía simple:</p>
+                        
+                        <ul class="feature-list">
+                            <li><strong>Fondos neutros:</strong> Papel, tela o vinilo en colores sólidos</li>
+                            <li><strong>Superficie estable:</strong> Mesa o base firme</li>
+                            <li><strong>Soporte para producto:</strong> Caja pequeña para elevar el producto</li>
+                            <li><strong>Pinzas y cinta:</strong> Para posicionar elementos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="iluminacion">
+            <div class="section-title">
+                <h2>Dominando la Iluminación</h2>
+                <p>La luz es el elemento más importante en la fotografía</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-body">
+                    <h3 style="color: var(--text); margin-bottom: 2rem;">Tipos de Iluminación para Productos</h3>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tipo de Luz</th>
+                                <th>Características</th>
+                                <th>Mejor para</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Luz Natural Indirecta</strong></td>
+                                <td>Suave, difusa, sin sombras duras</td>
+                                <td>Productos pequeños, comida, joyería</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Luz Lateral</strong></td>
+                                <td>Resalta texturas y volúmenes</td>
+                                <td>Productos con textura, ropa, artesanías</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Luz Frontal</strong></td>
+                                <td>Iluminación uniforme, pocas sombras</td>
+                                <td>Productos planos, documentos, catálogos</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Luz de Relleno</strong></td>
+                                <td>Suaviza sombras, ilumina detalles</td>
+                                <td>Todos los productos (como complemento)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h4 style="color: var(--text); margin: 2rem 0 1rem;">Configuración Básica de 2 Luces:</h4>
+                    <ul class="feature-list">
+                        <li><strong>Luz principal:</strong> Colocada a 45° del producto (luz lateral)</li>
+                        <li><strong>Luz de relleno:</strong> En el lado opuesto, más suave</li>
+                        <li><strong>Producto:</strong> En el centro, a la misma altura de las luces</li>
+                        <li><strong>Cámara:</strong> Frente al producto, al mismo nivel</li>
+                    </ul>
+                    
+                    <div class="tip-box">
+                        <strong>Evita la luz directa del sol:</strong> Crea sombras muy duras y puede alterar los colores. Usa luz indirecta de una ventana con cortina blanca.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="example-container">
+                <div class="example-box">
+                    <div class="example-image">
+                        <i class="fas fa-sun" style="color: #F39C12;"></i>
+                    </div>
+                    <h4>Luz Dura</h4>
+                    <p>Sombras marcadas, reflejos intensos, colores sobreexpuestos</p>
+                </div>
+                
+                <div class="example-box">
+                    <div class="example-image">
+                        <i class="fas fa-cloud" style="color: #3498DB;"></i>
+                    </div>
+                    <h4>Luz Suave</h4>
+                    <p>Sombras suaves, detalles visibles, colores naturales</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="composicion">
+            <div class="section-title">
+                <h2>Composición y Regla de Tercios</h2>
+                <p>Organiza los elementos para crear imágenes atractivas</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-body">
+                    <h3 style="color: var(--text); margin-bottom: 1.5rem;">La Regla de Tercios</h3>
+                    <p>Divide tu imagen en 9 cuadrantes iguales colocando el producto en los puntos de intersección.</p>
+                    
+                    <div class="rule-of-thirds">
+                        <div class="grid-lines">
+                            <div class="grid-line"></div>
+                            <div class="grid-line"></div>
+                            <div class="grid-line"></div>
+                            <div class="grid-line"></div>
+                            <div class="grid-line"></div>
+                            <div class="grid-line"></div>
+                            <div class="grid-line"></div>
+                            <div class="grid-line"></div>
+                            <div class="grid-line"></div>
+                        </div>
+                        <div class="focus-point point-1"></div>
+                        <div class="focus-point point-2"></div>
+                        <div class="focus-point point-3"></div>
+                        <div class="focus-point point-4"></div>
+                    </div>
+                    
+                    <h4 style="color: var(--text); margin: 2rem 0 1rem;">Técnicas de Composición Avanzadas:</h4>
+                    <ul class="feature-list">
+                        <li><strong>Espacio negativo:</strong> Deja aire alrededor del producto</li>
+                        <li><strong>Líneas conductoras:</strong> Guían la mirada hacia el producto</li>
+                        <li><strong>Simetría:</strong> Crea equilibrio y orden</li>
+                        <li><strong>Profundidad de campo:</strong> Enfoca el producto y desenfoca el fondo</li>
+                        <li><strong>Escala:</strong> Incluye un objeto conocido para mostrar tamaño</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                        <h3>Angulos de Toma</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Diferentes perspectivas para mostrar tu producto:</p>
+                        
+                        <ul class="feature-list">
+                            <li><strong>Vista frontal:</strong> Muestra el diseño principal</li>
+                            <li><strong>Angulo 45°:</strong> Da sensación de profundidad</li>
+                            <li><strong>Vista superior:</strong> Ideal para productos planos</li>
+                            <li><strong>Detalles close-up:</strong> Enfatiza texturas y calidad</li>
+                            <li><strong>Vista de uso:</strong> Muestra el producto en contexto</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-palette"></i>
+                        <h3>Fondos y Colores</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Elige fondos que complementen tu producto:</p>
+                        
+                        <ul class="feature-list">
+                            <li><strong>Fondos neutros:</strong> Blanco, gris, negro (no compiten)</li>
+                            <li><strong>Fondos de color:</strong> Usa colores de tu marca</li>
+                            <li><strong>Texturas sutiles:</strong> Madera, mármol, tela</li>
+                            <li><strong>Contexto:</strong> Escenas de uso realista</li>
+                            <li><strong>Consistencia:</strong> Mantén el mismo estilo en todas las fotos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="enfoque">
+            <div class="section-title">
+                <h2>Enfoque y Nitidez</h2>
+                <p>Asegura que tus productos se vean nítidos y profesionales</p>
+            </div>
+            
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-crosshairs"></i>
+                        <h3>Técnicas de Enfoque</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Métodos para lograr el enfoque perfecto:</p>
+                        
+                        <ul class="feature-list">
+                            <li><strong>Enfoque manual:</strong> Mayor precisión en productos pequeños</li>
+                            <li><strong>Punto de enfoque único:</strong> Selecciona exactamente dónde enfocar</li>
+                            <li><strong>Modo macro:</strong> Para detalles muy pequeños</li>
+                            <li><strong>Live View:</strong> Usa la pantalla para ver el enfoque en tiempo real</li>
+                            <li><strong>Bracketing de enfoque:</strong> Combina varias tomas con diferentes planos focales</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-camera"></i>
+                        <h3>Configuración de Cámara</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Ajustes recomendados para fotografía de producto:</p>
+                        
+                        <ul class="feature-list">
+                            <li><strong>Modo manual (M):</strong> Control total sobre la exposición</li>
+                            <li><strong>Apertura (f/8-f/11):</strong> Buena profundidad de campo</li>
+                            <li><strong>ISO bajo (100-400):</strong> Minimiza el ruido digital</li>
+                            <li><strong>Velocidad de obturación:</strong> 1/125s o más rápida (con trípode)</li>
+                            <li><strong>Balance de blancos:</strong> Configura según tu iluminación</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-hand-paper"></i>
+                        <h3>Estabilidad</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Evita fotos movidas o borrosas:</p>
+                        
+                        <ul class="feature-list">
+                            <li><strong>Usa trípode:</strong> Esencial para fotos nítidas</li>
+                            <li><strong>Temporizador o control remoto:</strong> Elimina vibración al disparar</li>
+                            <li><strong>Bloqueo de espejo:</strong> En cámaras réflex (reduce vibración)</li>
+                            <li><strong>Superficie estable:</strong> Asegura que ni cámara ni producto se muevan</li>
+                            <li><strong>Buena postura:</strong> Si disparas a mano, apoya los codos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tip-box">
+                <strong>Consejo de enfoque:</strong> Enfoca siempre en la parte más importante del producto. Para joyería, enfoca en la piedra principal. Para ropa, enfoca en la textura del tejido.
+            </div>
+        </section>
+        
+        <section id="practica">
+            <div class="section-title">
+                <h2>Guía Práctica Paso a Paso</h2>
+                <p>Flujo de trabajo para fotos de producto perfectas</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-body">
+                    <h3 style="color: var(--text); margin-bottom: 2rem;">Proceso de 7 Pasos</h3>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Paso</th>
+                                <th>Acción</th>
+                                <th>Consejo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1. Preparación</strong></td>
+                                <td>Limpia el producto y el área de trabajo</td>
+                                <td>Usa guantes para no dejar huellas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2. Configuración</strong></td>
+                                <td>Monta el fondo, luces y trípode</td>
+                                <td>Prueba diferentes ángulos de luz</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3. Composición</strong></td>
+                                <td>Posiciona el producto según regla de tercios</td>
+                                <td>Deja espacio para recortar después</td>
+                            </tr>
+                            <tr>
+                                <td><strong>4. Enfoque</strong></td>
+                                <td>Enfoca manualmente en el área principal</td>
+                                <td>Usa zoom digital para verificar nitidez</td>
+                            </tr>
+                            <tr>
+                                <td><strong>5. Configuración</strong></td>
+                                <td>Ajusta apertura, ISO y velocidad</td>
+                                <td>Haz fotos de prueba y revisa el histograma</td>
+                            </tr>
+                            <tr>
+                                <td><strong>6. Disparo</strong></td>
+                                <td>Toma múltiples fotos con diferentes ajustes</td>
+                                <td>Incluye variaciones de ángulo y composición</td>
+                            </tr>
+                            <tr>
+                                <td><strong>7. Revisión</strong></td>
+                                <td>Revisa las fotos en un monitor grande</td>
+                                <td>Busca detalles, reflejos y sombras no deseadas</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h4 style="color: var(--text); margin: 2rem 0 1rem;">Checklist Final Antes de Publicar:</h4>
+                    <ul class="feature-list">
+                        <li>¿El producto está perfectamente enfocado?</li>
+                        <li>¿Los colores son fieles al producto real?</li>
+                        <li>¿No hay reflejos o sombras no deseadas?</li>
+                        <li>¿El fondo es limpio y no distrae?</li>
+                        <li>¿La composición es atractiva y equilibrada?</li>
+                        <li>¿Se muestran todos los detalles importantes?</li>
+                    </ul>
+                    
+                    <div class="tip-box">
+                        <strong>Práctica constante:</strong> La fotografía mejora con la práctica. Toma fotos regularmente y analiza qué funciona y qué no. ¡No te desanimes si las primeras no son perfectas!
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>Manual de Fotografía de Producto para Emprendedores</p>
+            <p>© 2023 - Domina el arte de mostrar tus productos con imágenes profesionales</p>
+        </div>
+    </footer>
+</body>
+</html>
